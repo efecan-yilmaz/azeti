@@ -22,4 +22,6 @@ public class ScoreboardService {
     public List<Scoreboard> getScoreboard(String sortBy) {
         return scoreboardRepository.findAll(Sort.by(Sort.Direction.DESC, sortBy));
     }
+
+    public void deleteAll() { scoreboardRepository.deleteAll(); };
 }

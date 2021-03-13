@@ -14,13 +14,23 @@ public class ScoreboardController {
     @Autowired
     private ScoreboardService scoreboardService;
 
+    @CrossOrigin
     @PostMapping("/")
     public Scoreboard saveScoreboard(@RequestBody Scoreboard scoreboard) {
         return scoreboardService.saveScoreboard(scoreboard);
     }
 
+    @CrossOrigin
     @GetMapping("/")
     public List<Scoreboard> getScoreboard(@RequestParam(defaultValue = "score") String sortBy) {
         return scoreboardService.getScoreboard(sortBy);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/", method = RequestMethod.DELETE)
+    @ResponseBody
+    public String deleteAll() {
+        scoreboardService.deleteAll();
+        return "All records are deleted";
     }
 }
