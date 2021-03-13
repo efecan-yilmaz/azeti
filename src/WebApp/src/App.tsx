@@ -8,10 +8,6 @@ import Scoreboard from './components/Scoreboard';
 import Progress from './components/Progress';
 import SnackBar from './components/SnackBar';
 
-// TODO clean
-// TODO error dialog
-
-
 function App() {
   return (
     <IndicatorProvider>
